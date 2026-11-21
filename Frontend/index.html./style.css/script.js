@@ -1,49 +1,38 @@
-const chat=document.getElementById('chat'); const input=document.getElementById('msg');
 
-document.getElementById('send').onclick=()=>{
+const chat = document.getElementById('chat');
+const input = document.getElementById('msg');
 
-const t=input.value.trim();
+document.getElementById('send').onclick = () => {
 
-if(!t)return;
+    const t = input.value.trim();
 
-add('YOU: '+t,'user');
+    if (!t) return;
 
-input.value='';
+    add('YOU: ' + t, 'user');
 
-add('J.A.R.V.I.S: Processing...','ai');
+    input.value = '';
 
-setTimeout(()=>{
+    add('J.A.R.V.I.S: Processing...', 'ai');
 
-chat.lastChild.innerText='J.A.R.V.I.S: Systems online. How may I assist
+    setTimeout(() => {
 
-},1000);
+        chat.lastChild.innerText =
+            'J.A.R.V.I.S: Systems online. How may I assist you, Boss?';
 
-function add(text, who){
+    }, 1000);
 
-const d=document.createElement('div');
+};
 
-d.className='msq
+function add(text, who) {
 
-'+who;
+    const d = document.createElement('div');
 
-d.innerText=text;
+    d.className = 'msg ' + who;
 
-chat.appendChild(d);
+    d.innerText = text;
 
-chat.scrollTop=chat.scrollHeight;
+    chat.appendChild(d);
 
-NEXT STEPS & COMMUNITY
+    chat.scrollTop = chat.scrollHeight;
 
-Episode 4: THE VOICE PROTOCOL
-
-మన JARVIS కి Body వచ్చింది. Next Episode లో దానికి Voice ఇస్తాం! | మీరు మాట్లాడితే... అద ి వింటుంది. Reply ఇస్తుంది.
-
-GrowthOS Telugu Community
-
-• Source Code Files
-
-• Future Episode Updates
-
-you,
-
-Boss?';
+}
